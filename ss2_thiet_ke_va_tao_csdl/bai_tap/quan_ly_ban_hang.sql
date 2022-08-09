@@ -1,4 +1,6 @@
-create database if not exists quan_ly_ban_hang;
+drop database if exists quan_ly_ban_hang;
+
+create database quan_ly_ban_hang;
 
 use quan_ly_ban_hang;
 
