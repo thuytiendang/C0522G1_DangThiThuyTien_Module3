@@ -4,19 +4,19 @@ create database student_management;
 use student_management;
 
 create table student(
-id int primary key not null,
+id int primary key auto_increment,
 `name` varchar(45) not null,
 age int not null,
 country varchar(45) not null
 );
 
 create table class(
-id int primary key not null,
+id int primary key auto_increment,
 `name` varchar(45) not null
 );
 
 create table teacher(
-id int primary key not null,
+id int primary key auto_increment,
 `name` varchar(45) not null,
 age int not null,
 country varchar(45) not null
