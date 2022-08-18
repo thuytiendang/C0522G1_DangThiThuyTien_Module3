@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="layout.css">
+    <style>
+        body {
+            font-family: Tahoma, sans-serif, Helvetica, Arial;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .image {
+            width: 100%;
+            height: 300px;
+        }
+
+        .image1 {
+            width: 80%;
+            height: 300px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .image2 {
+            width: 100%;
+            height: 500px;
+            margin: 0px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: lightblue;
+        }
+
+        li {
+            width: 24%;
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: whitesmoke;
+            color: lightblue;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .footer {
+            text-align: center;
+        }
+
+        span {
+            color: grey;
+        }
+
+        .para {
+            text-align: left;
+            color: blue;
+            font-style: italic;
+            text-indent: 30px;
+            word-spacing: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="https://gamek.mediacdn.vn/133514250583805952/2021/6/22/vo1-1624353324356847751108.jpeg" class="image">
+</div>
+<div id="menu">
+    <ul>
+        <li style="border-right-style: solid; color: lightgray"><a href="#">Phim hoạt hình</a></li>
+        <li style="border-right-style: solid; color: lightgray"><a href="#">Phim hoạt hình yêu thích</a></li>
+        <li style="border-right-style: solid; color: lightgray"><a href="#">Nhân vật Hoạt hình</a></li>
+        <li><a href="#">Góp ý</a></li>
+    </ul>
+</div>
+<div class="row">
+    <div class="col-l-4">
+        <div>
+            <img src="https://m.media-amazon.com/images/M/MV5BODcwNWE3OTMtMDc3MS00NDFjLWE1OTAtNDU3NjgxODMxY2UyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
+                 class="image1">
+            <p style="text-align: left;  margin: 20px">
+                One Piece <span>42.000.000 lượt xem</span>
+            </p>
+        </div>
+        <div>
+            <img src="https://img.motanime.tv/data/film/Shadows-House-Ss2.jpg" class="image1">
+            <p style="text-align: left;  margin: 20px "> Ngôi Nhà Của Những Chiếc Bóng <span>2.000.000 lượt xem</span>
+            </p>
+        </div>
+        <div>
+            <img src="https://cdn.myanimelist.net/images/about_me/ranking_items/12358664-4a7e642c-cdec-415d-9f7a-ab13b4514aa9.jpg?t=1658023423"
+                 class="image1">
+            <p style="text-align: left;  margin: 20px"> One Punch Man <span>24.000.000 lượt xem</span></p>
+        </div>
+        <div>
+            <img src="https://jpsharing.net/wp-content/uploads/2021/12/Overlord-Season-4-jpsharing.net_-1.jpg"
+                 class="image1">
+            <p style="text-align: left;  margin: 20px"> Overlord <span>24.000.000 lượt xem</span></p>
+        </div>
+    </div>
+    <div class="col-l-8">
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/A0dzGAjC4So" title="KHU VƯỜN NGÔN TỪ: Ước mơ tuổi trẻ hay khát vọng tình yêu?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="para">
+            Một buổi sáng mùa mưa, trên đường đến trường, cậu đã trốn học và đến một khu vườn kiểu Nhật để phác thảo mẫu
+            giày và bắt gặp một phụ nữ ăn mặc chỉn chu tên Yukino Yukari đang ngồi uống bia ngắm mưa rơi. Họ không nói
+            nhau lời nào, nhưng khi trời tạnh mưa, người phụ nữ đã để ý phù hiệu của Takao và từ biệt cậu bằng một bài
+            tanka khiến cậu bối rối. Tiếp tục những buổi sáng trời mưa tiếp theo, họ lại gặp nhau và dần dần trở nên
+            thân thiết hơn (nhưng không tự giới thiệu về bản thân bao giờ). Khi Yukari biết và cảm thấy hứng thú với ước
+            mơ đóng giày của Takao, cậu quyết định làm một đôi giày cho cô ấy. Trong lúc Takao đo cỡ chân của mình,
+            Yukari nói mình cần phải tự " bước đi", ám chỉ về những phiền muộn cá nhân cô. Và rồi mùa mưa kết thúc, cả hai
+            người tự nhủ nên để người kia quay trở lại cuộc sống bình thường thì tốt hơn nhưng đồng thời, cũng thầm ước cho
+            trời cứ mưa để họ được gặp nhau.
+        </p>
+    </div>
+</div>
+<div class="footer">
+    <p>@2017 - Thiết kế bởi trang hoathinhvn.net</p>
+</div>
+</body>
+</html>
