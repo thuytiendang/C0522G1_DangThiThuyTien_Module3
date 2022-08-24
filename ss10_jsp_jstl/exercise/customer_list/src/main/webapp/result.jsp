@@ -14,12 +14,12 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<table class="table table-hover align-middle">
+<table class="table table-hover align-middle" >
     <thead>
     <tr>
         <td colspan="4"><h1>Danh sách khách hàng</h1></td>
     </tr>
-    <tr>
+    <tr style="background-color: aquamarine">
         <th>Tên</th>
         <th>Ngày sinh</th>
         <th>Địa chỉ</th>

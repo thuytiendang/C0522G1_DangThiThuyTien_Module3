@@ -11,19 +11,23 @@ public class CalculatorServlet extends HttpServlet {
         float secondOperand = Float.parseFloat(request.getParameter("second"));
         String operator = request.getParameter("operation");
         String result;
-        if(operator.equals("Addition")){
-            result = String.valueOf(firstOperand + secondOperand);
-        } else if (operator.equals("Subtraction")){
-            result = String.valueOf(firstOperand - secondOperand);
-        } else if (operator.equals("Multiplication")){
-            result = String.valueOf(firstOperand * secondOperand);
-        } else {
-            if (secondOperand==0){
-                result = "can not divide by 0";
-            }
-            else {
-                result = String.valueOf(firstOperand / secondOperand);
-            }
+        switch (operator) {
+            case "Addition":
+                result = String.valueOf(firstOperand + secondOperand);
+                break;
+            case "Subtraction":
+                result = String.valueOf(firstOperand - secondOperand);
+                break;
+            case "Multiplication":
+                result = String.valueOf(firstOperand * secondOperand);
+                break;
+            default:
+                if (secondOperand == 0) {
+                    result = "can not divide by 0";
+                } else {
+                    result = String.valueOf(firstOperand / secondOperand);
+                }
+                break;
         }
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("calculation.jsp");
