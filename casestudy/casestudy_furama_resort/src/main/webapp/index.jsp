@@ -58,7 +58,7 @@
              aria-expanded="false">Customer</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/customer">Customer list</a></li>
-            <li><a class="dropdown-item" href="#">Add new Customer</a></li>
+            <li><a class="dropdown-item" href="/customer?action=create">Add new Customer</a></li>
           </ul>
         </li>
 

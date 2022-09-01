@@ -27,6 +27,14 @@ values
 ('Thuy Tien', 'thuytien@gmail.com','Viet Nam'),
 ('Moon Dang', 'moon2k@gmail.com', 'Viet Nam');
 
+insert into Permision(id, name) values(1, 'add');
+
+insert into Permision(id, name) values(2, 'edit');
+
+insert into Permision(id, name) values(3, 'delete');
+
+insert into Permision(id, name) values(4, 'view');
+
 DELIMITER $$
 CREATE PROCEDURE find_all()
 BEGIN
@@ -34,7 +42,7 @@ SELECT *
 FROM users;
 END$$
 DELIMITER ;
-
+call find_all();
 
 DELIMITER $$
 CREATE PROCEDURE set_user_by_id(IN user_id INT, user_name varchar(120), user_email varchar(120), user_country varchar(120))

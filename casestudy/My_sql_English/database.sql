@@ -56,6 +56,7 @@ is_delete bit default 0,
  foreign key(customer_type_id) references customer_type(customer_type_id)
 );
 
+
 create table facility_type(
 facility_type_id int primary key auto_increment,
 facility_type_name varchar(45)
