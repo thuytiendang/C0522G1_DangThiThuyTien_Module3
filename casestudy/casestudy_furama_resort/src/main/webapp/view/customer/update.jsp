@@ -14,9 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title>Update Customer</title>
     <style>
-        body{
-            background-color: cadetblue;
-        }
         a {
             text-decoration: none;
         }

@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-
+<h1 style="color:red;"> 404 ERROR</h1>
 </body>
 </html>

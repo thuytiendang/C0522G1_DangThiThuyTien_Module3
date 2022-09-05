@@ -92,25 +92,6 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-//    private void showDeleteForm(HttpServletRequest request, HttpServletResponse response) {
-//        int id = Integer.parseInt(request.getParameter("customer_id"));
-//        Customer customer = iCustomerService.findById(id);
-//        RequestDispatcher requestDispatcher;
-//        if (customer == null){
-//            requestDispatcher = request.getRequestDispatcher("error_404.jsp");
-//        } else {
-//            request.setAttribute("customer", customer);
-//            requestDispatcher = request.getRequestDispatcher("view/customer/delete.jsp");
-//        }
-//        try {
-//            requestDispatcher.forward(request,response);
-//        } catch (ServletException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
         List<CustomerType> customerTypeList = iCustomerTypeService.showListCustomer();
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/customer/create.jsp");
@@ -202,7 +183,7 @@ public class CustomerServlet extends HttpServlet {
         Customer customer = new Customer(customerName, customerBirthday, customerGender, customerIdCard, customerPhone, customerEmail, customerAddress, customerTypeId);
         boolean check = iCustomerService.addNewCustomer(customer);
         String mess = "Add new customer successfully!";
-        if (!check) {
+        if (check) {
             mess = "Can not add new customer!";
         }
 

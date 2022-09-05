@@ -34,8 +34,25 @@
     </p>
 
     <c:if test="${mess!=null}">
-       <p>${mess}</p>
+        <c:if test="${!check}">
+            <div class="justify-content-center d-flex">
+                <div class="alert alert-success alert-dismissible fade show w-50 text-center">
+                    <strong>Congratulations!</strong> ${mess}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        </c:if>
+
+        <c:if test="${check}">
+            <div class="justify-content-center d-flex">
+                <div class="alert alert-danger alert-dismissible fade show w-50 text-center">
+                    <strong>Sorry!</strong> ${mess}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        </c:if>
     </c:if>
+
 
     <div class="d-flex justify-content-center">
         <form class="w-50 border border-2 border-success p-3 bg-warning rounded" action="/customer?action=create"
