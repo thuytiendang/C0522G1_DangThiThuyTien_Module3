@@ -20,33 +20,39 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Map<String, String> addNewCustomer(Customer customer) {
-        Map<String,String> map = new HashMap<>();
-        if(customer.getCustomerName().length() == 0){
-            map.put("empty_name","Tên không đc để trống");
-        }else if(!Validation.validateName(customer.getCustomerName())){
-            map.put("invalid_name","Sai định dạng tên");
+        Map<String, String> map = new HashMap<>();
+        if (customer.getCustomerName().length() == 0) {
+            map.put("empty_name", "Tên không đc để trống");
+        } else if (!Validation.validateName(customer.getCustomerName())) {
+            map.put("invalid_name", "Sai định dạng tên");
         }
 
-        if(customer.getCustomerPhone().length() == 0){
-            map.put("empty_phone","Số điện thoại không đc để trống");
-        }else if(!Validation.validatePhone(customer.getCustomerPhone())){
-            map.put("invalid_phone","Sai định dạng số điện thoại");
+        if (customer.getCustomerPhone().length() == 0) {
+            map.put("empty_phone", "Số điện thoại không đc để trống");
+        } else if (!Validation.validatePhone(customer.getCustomerPhone())) {
+            map.put("invalid_phone", "Sai định dạng số điện thoại");
         }
 
-        if(customer.getCustomerIdCard().length() == 0){
-            map.put("empty_IDCard","Số Căn cước công dân không đc để trống");
-        }else if(!Validation.validateIDCard(customer.getCustomerIdCard())){
-            map.put("invalid_IDCard","Sai định dạng số căn cước công dân");
+        if (customer.getCustomerIdCard().length() == 0) {
+            map.put("empty_IDCard", "Số Căn cước công dân không đc để trống");
+        } else if (!Validation.validateIDCard(customer.getCustomerIdCard())) {
+            map.put("invalid_IDCard", "Sai định dạng số căn cước công dân");
         }
 
-        if(customer.getCustomerEmail().length() == 0){
-            map.put("empty_email","Email không đc để trống");
-        }else if(!Validation.validateEmail(customer.getCustomerEmail())){
-            map.put("invalid_email","Sai định dạng Email");
+        if (customer.getCustomerEmail().length() == 0) {
+            map.put("empty_email", "Email không đc để trống");
+        } else if (!Validation.validateEmail(customer.getCustomerEmail())) {
+            map.put("invalid_email", "Sai định dạng Email");
         }
 
-        if(map.isEmpty()){
-            iCustomerRepository.addNewCustomer(customer);
+        if (customer.getCustomerBirthday().length() == 0) {
+            map.put("empty_birthday", "Ngày sinh không đc để trống");
+        }
+
+        if (map.isEmpty()) {
+            if (!iCustomerRepository.addNewCustomer(customer)){
+                map.put("error","Không thể tạo mới");
+            }
         }
 
         return map;
@@ -69,7 +75,7 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public List<Customer> search(String nameS, String addressS, String phoneS) {
-        return iCustomerRepository.search(nameS,addressS,phoneS);
+        return iCustomerRepository.search(nameS, addressS, phoneS);
     }
 
 

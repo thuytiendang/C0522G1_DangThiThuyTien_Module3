@@ -43,14 +43,6 @@
             </div>
         </c:if>
 
-        <c:if test="${check}">
-            <div class="justify-content-center d-flex">
-                <div class="alert alert-danger alert-dismissible fade show w-50 text-center">
-                    <strong>Sorry!</strong> ${mess}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-            </div>
-        </c:if>
     </c:if>
 
 
@@ -79,6 +71,11 @@
             <div class="mt-3 form-group">
                 <label for="dateOfBirth" class="h6">Date of Birth:</label>
                 <input type="date" id="dateOfBirth" class="form-control" name="customerBirthday">
+                <c:if test="${map.get('empty_birthday') != null}">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <c:out value="${map.get('empty_birthday')}" />
+                    </div>
+                </c:if>
             </div>
 
             <div class="mt-3 form-group">

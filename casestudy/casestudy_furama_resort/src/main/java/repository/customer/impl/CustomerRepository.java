@@ -49,7 +49,7 @@ public class CustomerRepository implements ICustomerRepository {
     }
 
     @Override
-    public void addNewCustomer(Customer customer) {
+    public boolean addNewCustomer(Customer customer) {
         Connection connection = BaseRepository.getConnectDB();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(CREATE_CUSTOMER);
@@ -61,10 +61,11 @@ public class CustomerRepository implements ICustomerRepository {
             preparedStatement.setString(6, customer.getCustomerEmail());
             preparedStatement.setString(7, customer.getCustomerAddress());
             preparedStatement.setInt(8, customer.getCustomerTypeId());
-            preparedStatement.executeUpdate();
+            return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     @Override

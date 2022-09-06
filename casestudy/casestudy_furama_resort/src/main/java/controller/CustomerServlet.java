@@ -188,6 +188,8 @@ public class CustomerServlet extends HttpServlet {
             mess = "Add new customer successfully!";
             request.setAttribute("mess", mess);
         }else {
+            mess = map.get("error");
+            request.setAttribute("mess",mess);
             request.setAttribute("map",map);
             request.setAttribute("customer",customer);
         }

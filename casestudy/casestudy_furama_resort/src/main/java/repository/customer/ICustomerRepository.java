@@ -7,7 +7,7 @@ import java.util.List;
 public interface ICustomerRepository {
     List<Customer> showListCustomer();
 
-    void addNewCustomer(Customer customer);
+    boolean addNewCustomer(Customer customer);
 
     void deleteCustomer(int id);
 
