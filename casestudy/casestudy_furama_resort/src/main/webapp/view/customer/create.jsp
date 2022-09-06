@@ -60,9 +60,20 @@
             <div class="form-group">
                 <label for="name" class="h6">Name:</label>
                 <div class="input-group">
-                    <input type="text" id="name" class="form-control" placeholder="Input name" name="customerName">
+                    <input type="text" id="name" class="form-control" value="${customer.customerName}" placeholder="Input name" name="customerName">
                     <span class="input-group-text"> <i class="fa-solid fa-person-circle-question"></i></span>
                 </div>
+
+                <c:if test="${map.get('empty_name') != null}">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <c:out value="${map.get('empty_name')}" />
+                    </div>
+                </c:if>
+                <c:if test="${map.get('invalid_name') != null}">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <c:out value="${map.get('invalid_name')}" />
+                    </div>
+                </c:if>
             </div>
 
             <div class="mt-3 form-group">
@@ -88,25 +99,56 @@
             <div class="mt-3 form-group">
                 <label for="idCard" class="h6">Identity card:</label>
                 <div class="input-group">
-                    <input type="text" id="idCard" class="form-control" placeholder="Input Id card" name="customerIdCard">
+                    <input type="text" id="idCard" class="form-control" placeholder="Input Id card" value="${customer.customerIdCard}" name="customerIdCard">
                     <span class="input-group-text"><i class="fa-solid fa-id-card"></i></span>
                 </div>
+
+                <c:if test="${map.get('empty_IDCard') != null}">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <c:out value="${map.get('empty_IDCard')}" />
+                    </div>
+                </c:if>
+                <c:if test="${map.get('invalid_IDCard') != null}">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <c:out value="${map.get('invalid_IDCard')}" />
+                    </div>
+                </c:if>
             </div>
 
             <div class="mt-3 form-group">
                 <label for="phone" class="h6">Phone number:</label>
                 <div class="input-group">
-                    <input type="text" id="phone" class="form-control" placeholder="Input Phone number" name="customerPhone">
+                    <input type="text" id="phone" value="${customer.customerPhone}" class="form-control" placeholder="Input Phone number" name="customerPhone">
                     <span class="input-group-text"><i class="fa-solid fa-square-phone"></i></span>
                 </div>
+                <c:if test="${map.get('empty_phone') != null}">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <c:out value="${map.get('empty_phone')}" />
+                    </div>
+                </c:if>
+                <c:if test="${map.get('invalid_phone') != null}">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <c:out value="${map.get('invalid_phone')}" />
+                    </div>
+                </c:if>
             </div>
 
             <div class="mt-3 form-group">
                 <label for="email" class="h6">Email:</label>
                 <div class="input-group">
-                    <input type="text" id="email" class="form-control" placeholder="Input Email" name="customerEmail">
+                    <input type="text" id="email" class="form-control" placeholder="Input Email"  value="${customer.customerEmail}" name="customerEmail">
                     <span class="input-group-text"><i class="fa-solid fa-envelope-circle-check"></i></span>
                 </div>
+                <c:if test="${map.get('empty_email') != null}">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <c:out value="${map.get('empty_email')}" />
+                    </div>
+                </c:if>
+                <c:if test="${map.get('invalid_email') != null}">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <c:out value="${map.get('invalid_email')}" />
+                    </div>
+                </c:if>
             </div>
 
             <div class="mt-3 form-group">

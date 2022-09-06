@@ -3,11 +3,12 @@ package service.customer;
 import model.customer.Customer;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ICustomerService {
     List<Customer> showListCustomer();
 
-    boolean addNewCustomer(Customer customer);
+    Map<String, String> addNewCustomer(Customer customer);
 
     void deleteCustomer(int id);
 

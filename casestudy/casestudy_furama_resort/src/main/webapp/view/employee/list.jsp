@@ -163,9 +163,13 @@
         let any = document.getElementById("wf").value;
         if(any){
             document.getElementById("modalSuccess").click();
+            changeURL();
         }
     }
     showSuccessModal();
+    function changeURL() {
+        window.history.replaceState("", "", "/employee");
+    }
 </script>
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>

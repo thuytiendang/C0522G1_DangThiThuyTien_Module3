@@ -115,7 +115,7 @@
 <%--                            <span class="text-light m-auto">Attach facility list</span>--%>
 <%--                        </button>--%>
 <%--                    </a>--%>
-                    <a href="/contract?action=show&id=${contract.contractId}" data-bs-toggle="modal"
+                    <a  data-bs-toggle="modal"
                        data-bs-target="#showAttachFacility" onclick="showAttachFacility('${contract.getContractId()}',
                             '${AttachFacility.getAttachFacilityName()}', '${AttachFacility.getAttachFacilityCost()}',
                             '${AttachFacility.getAttachFacilityUnit()}', '${AttachFacility.getAttachFacilityStatus()}' )">

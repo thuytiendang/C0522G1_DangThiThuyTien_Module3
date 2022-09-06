@@ -12,6 +12,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "CustomerServlet", value = "/customer")
 public class CustomerServlet extends HttpServlet {
@@ -181,13 +182,17 @@ public class CustomerServlet extends HttpServlet {
         String customerAddress = request.getParameter("customerAddress");
         int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));
         Customer customer = new Customer(customerName, customerBirthday, customerGender, customerIdCard, customerPhone, customerEmail, customerAddress, customerTypeId);
-        boolean check = iCustomerService.addNewCustomer(customer);
-        String mess = "Add new customer successfully!";
-        if (check) {
-            mess = "Can not add new customer!";
+        Map<String,String> map = iCustomerService.addNewCustomer(customer);
+        String mess;
+        if (map.isEmpty()) {
+            mess = "Add new customer successfully!";
+            request.setAttribute("mess", mess);
+        }else {
+            request.setAttribute("map",map);
+            request.setAttribute("customer",customer);
         }
-
-        request.setAttribute("mess", mess);
         showCreateForm(request, response);
+
+
     }
 }
